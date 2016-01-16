@@ -155,7 +155,7 @@ func (r *redirectHandler) ServeHTTP(rsp http.ResponseWriter, req *http.Request) 
 	if item != nil {
 		if location, b := r.getLocation(rsp, req, item); b {
 			rsp.Header().Add("Location", location)
-			rsp.WriteHeader(302)
+			rsp.WriteHeader(301)
 			return
 		}
 	}
